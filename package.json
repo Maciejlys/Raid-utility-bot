@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./build/index.js",
-    "tsc": "tsc",
-    "postinstall": "npm run tsc"
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "build": "tsc",
+    "postinstall": "npm run build"
   },
   "author": "",
   "license": "ISC",
