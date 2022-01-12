@@ -10,4 +10,4 @@ If our last created event has an id of 123456\
 you simply go to channel where the event was created and type\
 !inv 123456\
 This message should be deleted and DM with invite macro\
-sent to the author
+should be sent to the author
