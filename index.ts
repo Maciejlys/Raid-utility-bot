@@ -75,6 +75,13 @@ const app = () => {
 
       message.delete();
     }
+
+    if (message.content.startsWith(`!xd`)) {
+      if (message.author.id == "219222420660158466") {
+        message.author.send("test");
+      }
+      message.delete();
+    }
   });
 
   client.login(token);
