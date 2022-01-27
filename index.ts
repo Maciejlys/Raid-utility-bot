@@ -62,7 +62,7 @@ const app = () => {
                   }
                 }
               }
-              const macro = nicknames.join("\n");
+              const macro = nicknames.join(" ");
               message.author.send(macro);
             }
           })
@@ -87,7 +87,7 @@ const app = () => {
           pinnedOnly: false, // Only returned pinned messages
         });
         await allMessages.forEach((message) => messages.push(message));
-        await message.author.send(messages.join(" "));
+        await message.author.send(messages.join("\n"));
       }
       message.delete();
     }
