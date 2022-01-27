@@ -62,7 +62,7 @@ const app = () => {
                   }
                 }
               }
-              const macro = nicknames.join(" ");
+              const macro = nicknames.join("\n");
               message.author.send(macro);
             }
           })
