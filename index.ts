@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv";
 import { Client, Intents } from "discord.js";
 import * as http from "http";
+const fetchAll = require("discord-fetch-all");
 
 dotenv.config();
 const token = process.env.DISCORD_BOT_TOKEN!;
@@ -66,7 +67,6 @@ const app = () => {
             }
           })
           .catch((e) => {
-            console.log(e);
             message.author.send("Error");
           });
       } else {
@@ -78,7 +78,16 @@ const app = () => {
 
     if (message.content.startsWith(`!xd`)) {
       if (message.author.id == "219222420660158466") {
-        message.author.send("test");
+        const messages = [];
+        const channel = client.channels.cache.get("933416879442251846");
+        const allMessages = await fetchAll.messages(channel, {
+          reverseArray: true, // Reverse the returned array
+          userOnly: true, // Only return messages by users
+          botOnly: false, // Only return messages by bots
+          pinnedOnly: false, // Only returned pinned messages
+        });
+        await allMessages.forEach((message) => messages.push(message));
+        await message.author.send(messages.join(" "));
       }
       message.delete();
     }
