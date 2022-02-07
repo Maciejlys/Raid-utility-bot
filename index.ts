@@ -55,7 +55,7 @@ const app = () => {
                       if (result) {
                         result.shift();
                         result.forEach((f) => {
-                          nicknames.push("/invite " + f.replace(/\*/g, ""));
+                          nicknames.push("/inv " + f.replace(/\*/g, ""));
                         });
                       }
                     }
